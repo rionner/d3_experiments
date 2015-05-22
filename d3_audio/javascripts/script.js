@@ -23,7 +23,7 @@ function d3Project(data){
     .data(data)
         .attr('r', function(d){ return d/20 +'px';})
         .attr('cx', function(y, x){ return (data.length/(x+10))+'%';})
-        .attr('cy', function(d){ return Math.abs(500-d*2) +'px';})
+        .attr('cy', function(d){ return Math.abs(500-d) +'px';})
         .attr('class','bubble')
         .style('fill',function(d){ return colorGradient(100/d);})
         .style('opacity', function(d){ return d/300;});
@@ -72,10 +72,10 @@ window.onload = function(){
 
   svg = d3.select('body')
           .append('svg')
-            .attr('width', '1000px')
+            .attr('width', '100%')
             .attr('height', '500px');
 
-  audioContext = new webkitAudioContext();
+  audioContext = new AudioContext();
   loadFile('audio/Wonderful Everyday_ Arthur.mp3');
 
 };
